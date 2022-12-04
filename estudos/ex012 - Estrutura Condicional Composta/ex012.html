@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <label for="pais">Digite o nome do país onde você reside: </label><input type="text" name="pais" id="pais" required placeholder="Ex: Brasil">
+    <input type="button" value="Ok" onclick="clicou()">
+    <div class="nacionalidade"></div>
+
+    <script>
+        function clicou() {
+            var pais = window.document.getElementById('pais')
+            var country = pais.value
+
+            var nacionalidade = window.document.getElementsByClassName('nacionalidade') [0]
+
+            if (country != 'Brasil') {
+                nacionalidade.innerHTML = `<p>Vivendo em/na ${country}, você é <strong>Estrangeiro!</strong</p>`
+            } else {
+                nacionalidade.innerHTML = `<p>Vivendo no ${country}, você é <strong>Brasileiro!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

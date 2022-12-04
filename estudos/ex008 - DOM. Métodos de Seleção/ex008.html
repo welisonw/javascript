@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            color: darkblue;
+            font: normal 2em Arial;
+        }
+
+        .imagens {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-bottom: 100px;
+        }
+
+        .imagens img {
+            width: 350px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p class="msg-p2">Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div id="msg1">Clique em mim</div><br>
+    <div name="msg2">Outro parágrafo</div><br>
+    <div class="msg3">Esta é uma classe</div><br>
+
+    <h2>Prints Aula</h2>
+        <div class="imagens">
+            <img src="Captura de Tela 2022-11-16 às 18.41.56.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 18.52.29.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 18.52.50.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 21.56.46.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 21.56.53.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 21.57.11.png" alt="">
+            <img src="Captura de Tela 2022-11-16 às 22.24.03.png" alt="">
+        </div>
+
+
+    <script>
+        window.document.write(window.document.URL)
+        
+
+        // Método de Seleção por Marca (getElementByTagName):
+        var corpo = window.document.body
+        var paragrafo1 = window.document.getElementsByTagName('p')[1]
+        window.document.write(`<br> <br> Está escrito assim com innerText: ${paragrafo1.innerText} <br><br>`)
+
+        corpo.style.backgroundColor = 'green' 
+        paragrafo1.style.color = 'white'
+
+        window.document.write(`Está escrito assim com innerHTML: ${paragrafo1.innerHTML} <br>`) // Diferença do innerHTML para o innetText é que no HTML ele puxa toda a formatação da TagName, como, por exemplo, o strong.
+
+        // window.alert(paragrafo1.innerText)
+
+        //Método de Seleção por ID (getElementById):
+        var div = window.document.getElementById('msg1')
+        div.style.background = 'purple'
+        div.style.maxWidth = 'max-content'
+        div.style.padding = '10px'
+        div.innerText = 'Estou aguardando...' // Ou pode-se usar da forma completa = window.documento.getElementById('msg').innetText = 'Estou aguardando...'
+
+        //Método de Seleção por Name (getElementByName)
+        var msg = window.document.getElementsByName('msg2')[0]
+        msg.innerText = 'Olá!!!'
+        msg.style.fontSize = '3em'
+
+        var msgg = window.document.getElementsByClassName('msg3')[0]
+        msgg.innerText = 'Estou aprendendo JavaScript'
+        msgg.style.color = 'salmon'
+
+        
+        /* Método de Seleção por Seletor (document.querySelector)
+
+        É um método mais recente e bastante utilizado quando se pretende fazer alterações rápidas
+
+        No caso do HTML acima, ele seria utilizado da seguinte maneira:
+
+        Para ID = 
+        var div = window.document.querySelector (div#msg1)
+        div.style.background = 'blue'
+
+        Para Class =
+        var div = window.document.querySelector (div.msg3)
+        div.style.background = 'blue'
+
+        */ 
+    </script>
+    
+
+
+
+</body>
+</html>

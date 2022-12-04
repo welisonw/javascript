@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area {
+            display: grid;
+            background-color: lightgreen;
+            color: darkgreen;
+            width: 200px;
+            height: 200px;
+            justify-items: center;
+            align-items: center;
+            font: normal 20pt Arial;
+        }
+
+        .imagens {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .imagens img {
+            width: 350px;
+            height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <div class="imagens">
+        <img src="Captura de Tela 2022-11-17 às 11.54.23.png" alt="">
+        <img src="Captura de Tela 2022-11-17 às 12.06.45.png" alt="">
+    </div>
+
+<script>
+    // Função é um conjunto de códigos/linhas que vão ser executadas somente quando o evento ocorrer.
+
+    var a = window.document.getElementById('area') // Posso criar o var fora da função, mas não é recomendado. Aprender mais depois.
+
+    function clicar() {
+        a.innerText = 'Clicou!'
+        a.style.backgroundColor = 'lightcoral'
+    }
+
+    function entrar () {
+        a.innerText = 'Entrou!'
+    }
+
+    function sair() {
+        a.innerText = 'Saiu!'
+        a.style.backgroundColor = 'lightgreen'
+    }
+
+    /* Ao invés de utilizar o HTML para adicionar eventos, eu posso utilizar o próprio JavaScript:
+
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair)
+
+    */
+
+</script>
+
+
+
+</body>
+</html>

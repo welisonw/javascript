@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 004 - Calculadora de Troco</title>
+    <style>
+        body {
+            font: normal 1em Times;
+        }
+
+        button {
+            font: normal 1em Times;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Troco</h1>
+    
+    <button onclick="clicou()">Comprar produto</button>
+
+    <script>
+        function clicou() {
+            var produto = window.prompt(`Qual produto você está comprando?`)
+
+            var valor = Number(window.prompt(`Quanto custa o(a) ${produto} que você está comprando?`))
+            var conversao_valor = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+            var pagamento = Number(window. prompt(`Qual foi o valor que você deu para pagar o(a) ${produto}?`))
+            var conversao_pagamento = pagamento.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+            var subtracao = pagamento - valor
+            var troco = subtracao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+            alert(`Você comprou um(a) ${produto} que custou ${conversao_valor}.\nDeu ${conversao_pagamento} como pagamento e vai receber ${troco} de troco. \nVolte Sempre!`)
+
+        /* Ou resolvido de outra maneira:
+
+        function clicou() {
+            let product_name = prompt("Que produto você está comprando?");
+
+            let product_cost = prompt(`Quanto custa ${product_name} que você está comprando?`).replace(",", ".");
+
+            let payment = prompt(`Qual foi o valor que você deu para pagar ${product_name}?`).replace(",", ".");
+
+            let change = payment - product_cost;
+
+            alert(`Você comprou ${product_name} que custou ${moneyFormat(product_cost)}. \nDeu ${moneyFormat(payment)} em dinheiro e vai receber $moneyFormat(change)} de troco. \nVolte Sempre!`);
+        }
+
+        function moneyFormat(element) {
+            return Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(element);
+        }
+        
+        */
+        }
+    </script>
+</body>
+</html>

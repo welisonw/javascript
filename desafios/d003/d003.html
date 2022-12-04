@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 003 - Antes e Depois</title>
+    <style>
+        body {
+            font: normal 1em Times;
+        }
+
+        button {
+            font: normal 1em Times;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    
+    <button onclick="clicou()">Antecessor e Sucessor</button>
+
+    <script>
+        function clicou() {
+            var numero = prompt(`Digite um número inteiro qualquer:`)
+            alert(`Antes de ${numero}, temos o número ${-- numero}.\nDepois de ${++ numero}, temos o número ${++ numero}.`)
+            
+        /* Ou resolvido de outra maneira:
+
+        function clicou() {
+            let numero = Number(prompt('Digite um número inteiro qualquer'))
+    
+            let antes = `Antes de ${numero}, temos o número ${numero -= 1}`
+            let  depois = `Depois de ${numero += 1}, temos o número ${numero  += 1}`
+    
+           alert(`${antes}  \n${depois}`) // \n - quebra de linha (new line) 
+        }
+
+        */
+        }
+    </script>
+
+</body>
+</html>
